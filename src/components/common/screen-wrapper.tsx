@@ -5,7 +5,7 @@ export const ScreenWrapper = ({
   children,
   className,
   ...props
-}: {
+}: React.HTMLAttributes<HTMLDivElement> & {
   children: React.ReactNode;
   className?: string;
 }) => {

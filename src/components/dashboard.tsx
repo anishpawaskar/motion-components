@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
 import { ScreenWrapper } from "./common/screen-wrapper";
 import {
   BellIcon,
@@ -12,6 +12,12 @@ import {
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "motion/react";
+
+type NavLinkType = {
+  label: string;
+  href: string;
+  icon: FC<{ size?: number }>;
+};
 
 export const Dashboard = () => {
   return (
@@ -47,7 +53,13 @@ const Sidebar = () => {
   );
 };
 
-const SidebarHeader = ({ open, setOpen }) => {
+const SidebarHeader = ({
+  open,
+  setOpen,
+}: {
+  open: boolean;
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}) => {
   const container = {
     open: {
       transition: {
@@ -117,7 +129,7 @@ const SidebarHeader = ({ open, setOpen }) => {
   );
 };
 
-const SidebarContent = ({ open }) => {
+const SidebarContent = ({ open }: { open: boolean }) => {
   const NAV_LINKS = [
     {
       label: "Dashboard",
@@ -144,9 +156,16 @@ const SidebarContent = ({ open }) => {
   return (
     <nav className="my-5 flex-1 w-full">
       <ul className="flex flex-col gap-1">
-        {NAV_LINKS.map((navlink) => {
+        {NAV_LINKS.map((navlink, idx) => {
+          const isSelected = idx === 2;
+
           return (
-            <SidebarLink key={navlink.label} navlink={navlink} open={open} />
+            <SidebarLink
+              key={navlink.label}
+              navlink={navlink}
+              open={open}
+              isSelected={isSelected}
+            />
           );
         })}
       </ul>
@@ -154,13 +173,29 @@ const SidebarContent = ({ open }) => {
   );
 };
 
-const SidebarLink = ({ navlink, open }) => {
+const SidebarLink = ({
+  navlink,
+  open,
+  isSelected,
+}: {
+  navlink: NavLinkType;
+  open: boolean;
+  isSelected: boolean;
+}) => {
   const IconComponent = navlink.icon;
 
   return (
     <li>
-      <Link href={navlink.href} className="flex items-center h-10 gap-2">
-        <div className="w-10 h-full rounded-lg bg-neutral-800 text-neutral-100 flex items-center justify-center shrink-0">
+      <Link
+        href={navlink.href}
+        className={cn(
+          "flex items-center h-10 gap-2 rounded-md",
+          isSelected
+            ? "bg-neutral-700 text-white"
+            : "hover:bg-neutral-700 hover:text-white"
+        )}
+      >
+        <div className="w-10 h-full rounded-lg flex items-center justify-center shrink-0">
           <IconComponent size={18} />
         </div>
         <AnimatePresence>

@@ -1,20 +1,23 @@
-import { cn } from "@/lib/utils";
-import React from "react";
+import { cn } from '@/lib/utils'
+import React from 'react'
 
 export const ScreenWrapper = ({
-  children,
-  className,
-  ...props
+    children,
+    className,
+    ...props
 }: React.HTMLAttributes<HTMLDivElement> & {
-  children: React.ReactNode;
-  className?: string;
+    children: React.ReactNode
+    className?: string
 }) => {
-  return (
-    <div
-      className={cn("h-screen flex items-center justify-center", className)}
-      {...props}
-    >
-      {children}
-    </div>
-  );
-};
+    return (
+        <div
+            className={cn(
+                'flex h-screen items-center justify-center',
+                className
+            )}
+            {...props}
+        >
+            {children}
+        </div>
+    )
+}

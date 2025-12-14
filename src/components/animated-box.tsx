@@ -64,8 +64,10 @@ const Input = ({
     ...props
 }: InputProps) => {
     return (
-        <label htmlFor="label">
-            <code>{label}</code>
+        <div className="flex flex-col gap-1.5">
+            <label htmlFor="label">
+                {label} : {value}
+            </label>
             <input
                 type="range"
                 max={max}
@@ -74,6 +76,6 @@ const Input = ({
                 onChange={(e) => onChange(parseFloat(e.target.value))}
                 {...props}
             />
-        </label>
+        </div>
     );
 };

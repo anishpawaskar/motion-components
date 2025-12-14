@@ -4,6 +4,7 @@ import { AnimatedTextPage } from '@/components/animated-text';
 import { ColorChangingBox } from '@/components/color-changing-box';
 import { Dashboard } from '@/components/dashboard';
 import { HoverButton } from '@/components/hover-button';
+import { Wildcard } from '@/components/wildcard';
 
 export default function Home() {
     return (
@@ -14,6 +15,7 @@ export default function Home() {
             <AnimatedTextPage />
             <AnimatedBox />
             <ColorChangingBox />
+            <Wildcard />
         </div>
     );
 }

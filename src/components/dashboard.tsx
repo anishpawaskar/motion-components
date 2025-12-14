@@ -1,23 +1,23 @@
-'use client'
+'use client';
 
-import React, { FC, useState } from 'react'
-import { ScreenWrapper } from './common/screen-wrapper'
+import React, { FC, useState } from 'react';
+import { ScreenWrapper } from './common/screen-wrapper';
 import {
     BellIcon,
     HouseIcon,
     ListTodoIcon,
     MessageCircleIcon,
     UsersIcon,
-} from 'lucide-react'
-import Link from 'next/link'
-import { cn } from '@/lib/utils'
-import { AnimatePresence, motion } from 'motion/react'
+} from 'lucide-react';
+import Link from 'next/link';
+import { cn } from '@/lib/utils';
+import { AnimatePresence, motion } from 'motion/react';
 
 type NavLinkType = {
-    label: string
-    href: string
-    icon: FC<{ size?: number }>
-}
+    label: string;
+    href: string;
+    icon: FC<{ size?: number }>;
+};
 
 export const Dashboard = () => {
     return (
@@ -25,11 +25,11 @@ export const Dashboard = () => {
             <Sidebar />
             <MainContainer />
         </ScreenWrapper>
-    )
-}
+    );
+};
 
 const Sidebar = () => {
-    const [open, setOpen] = useState(true)
+    const [open, setOpen] = useState(true);
 
     return (
         <motion.aside
@@ -50,15 +50,15 @@ const Sidebar = () => {
             <SidebarHeader open={open} setOpen={setOpen} />
             <SidebarContent open={open} />
         </motion.aside>
-    )
-}
+    );
+};
 
 const SidebarHeader = ({
     open,
     setOpen,
 }: {
-    open: boolean
-    setOpen: React.Dispatch<React.SetStateAction<boolean>>
+    open: boolean;
+    setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
     const container = {
         open: {
@@ -73,12 +73,12 @@ const SidebarHeader = ({
                 staggerDirection: -1,
             },
         },
-    }
+    };
 
     const item = {
         open: { opacity: 1, x: 0 },
         closed: { opacity: 0, x: -10 },
-    }
+    };
 
     return (
         <div
@@ -128,8 +128,8 @@ const SidebarHeader = ({
                 )}
             </AnimatePresence>
         </div>
-    )
-}
+    );
+};
 
 const SidebarContent = ({ open }: { open: boolean }) => {
     const NAV_LINKS = [
@@ -153,13 +153,13 @@ const SidebarContent = ({ open }: { open: boolean }) => {
             href: '/messages',
             icon: MessageCircleIcon,
         },
-    ]
+    ];
 
     return (
         <nav className="my-5 w-full flex-1">
             <ul className="flex flex-col gap-1">
                 {NAV_LINKS.map((navlink, idx) => {
-                    const isSelected = idx === 2
+                    const isSelected = idx === 2;
 
                     return (
                         <SidebarLink
@@ -168,23 +168,23 @@ const SidebarContent = ({ open }: { open: boolean }) => {
                             open={open}
                             isSelected={isSelected}
                         />
-                    )
+                    );
                 })}
             </ul>
         </nav>
-    )
-}
+    );
+};
 
 const SidebarLink = ({
     navlink,
     open,
     isSelected,
 }: {
-    navlink: NavLinkType
-    open: boolean
-    isSelected: boolean
+    navlink: NavLinkType;
+    open: boolean;
+    isSelected: boolean;
 }) => {
-    const IconComponent = navlink.icon
+    const IconComponent = navlink.icon;
 
     return (
         <li>
@@ -215,9 +215,9 @@ const SidebarLink = ({
                 </AnimatePresence>
             </Link>
         </li>
-    )
-}
+    );
+};
 
 const MainContainer = () => {
-    return <main className="h-full flex-1 bg-slate-50 p-5">Dashboard</main>
-}
+    return <main className="h-full flex-1 bg-slate-50 p-5">Dashboard</main>;
+};

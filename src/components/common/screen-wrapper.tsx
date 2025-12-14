@@ -1,13 +1,13 @@
-import { cn } from '@/lib/utils'
-import React from 'react'
+import { cn } from '@/lib/utils';
+import React from 'react';
 
 export const ScreenWrapper = ({
     children,
     className,
     ...props
 }: React.HTMLAttributes<HTMLDivElement> & {
-    children: React.ReactNode
-    className?: string
+    children: React.ReactNode;
+    className?: string;
 }) => {
     return (
         <div
@@ -19,5 +19,5 @@ export const ScreenWrapper = ({
         >
             {children}
         </div>
-    )
-}
+    );
+};

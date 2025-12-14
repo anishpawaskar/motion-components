@@ -1,21 +1,21 @@
-'use client'
+'use client';
 
-import { ScreenWrapper } from './common/screen-wrapper'
-import { cn } from '@/lib/utils'
-import { motion, stagger } from 'motion/react'
+import { ScreenWrapper } from './common/screen-wrapper';
+import { cn } from '@/lib/utils';
+import { motion, stagger } from 'motion/react';
 
 export const AnimatedTextPage = () => {
     return (
         <ScreenWrapper>
             <AnimatedText text="Hello World" />
         </ScreenWrapper>
-    )
-}
+    );
+};
 
 type AnimatedTextProps = {
-    text: string
-    className?: string
-}
+    text: string;
+    className?: string;
+};
 
 const AnimatedText = ({
     text,
@@ -31,7 +31,7 @@ const AnimatedText = ({
             opacity: 1,
             y: 0,
         },
-    }
+    };
 
     return (
         <motion.p
@@ -56,8 +56,8 @@ const AnimatedText = ({
                     >
                         {char === ' ' ? '\u00A0' : char}
                     </motion.span>
-                )
+                );
             })}
         </motion.p>
-    )
-}
+    );
+};

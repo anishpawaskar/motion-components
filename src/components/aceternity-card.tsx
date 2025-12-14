@@ -1,7 +1,7 @@
-'use client'
+'use client';
 
-import React, { useState } from 'react'
-import { ScreenWrapper } from './common/screen-wrapper'
+import React, { useState } from 'react';
+import { ScreenWrapper } from './common/screen-wrapper';
 import {
     CheckCircle,
     Clock,
@@ -9,12 +9,12 @@ import {
     RotateCwIcon,
     XIcon,
     Zap,
-} from 'lucide-react'
-import { AnimatePresence, motion } from 'motion/react'
+} from 'lucide-react';
+import { AnimatePresence, motion } from 'motion/react';
 
 export const AceternityCard = () => {
-    const [isHovered, setHovered] = useState(false)
-    const [open, setOpen] = useState(true)
+    const [isHovered, setHovered] = useState(false);
+    const [open, setOpen] = useState(true);
     const items = [
         {
             id: 1,
@@ -40,7 +40,7 @@ export const AceternityCard = () => {
             small: 'UTC-first',
             Icon: Clock,
         },
-    ]
+    ];
 
     return (
         <ScreenWrapper className="bg-neutral-100">
@@ -117,7 +117,7 @@ export const AceternityCard = () => {
                                             className="grid h-full w-full grid-rows-4 divide-y divide-neutral-200 bg-white"
                                         >
                                             {items.map((item) => {
-                                                const IconComponent = item.Icon
+                                                const IconComponent = item.Icon;
 
                                                 return (
                                                     <div
@@ -134,7 +134,7 @@ export const AceternityCard = () => {
                                                             </p>
                                                         </div>
                                                     </div>
-                                                )
+                                                );
                                             })}
                                             <div className="flex items-center justify-center gap-2 px-3">
                                                 <PlusIcon className="opacity-50" />
@@ -176,5 +176,5 @@ export const AceternityCard = () => {
                 </AnimatePresence>
             </div>
         </ScreenWrapper>
-    )
-}
+    );
+};

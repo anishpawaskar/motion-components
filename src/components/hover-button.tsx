@@ -1,9 +1,9 @@
-'use client'
+'use client';
 
-import React from 'react'
-import { ScreenWrapper } from './common/screen-wrapper'
-import { cn } from '@/lib/utils'
-import { motion } from 'motion/react'
+import React from 'react';
+import { ScreenWrapper } from './common/screen-wrapper';
+import { cn } from '@/lib/utils';
+import { motion } from 'motion/react';
 
 export const HoverButton = () => {
     return (
@@ -45,5 +45,5 @@ export const HoverButton = () => {
                 <span className="absolute inset-x-0 bottom-px h-1 bg-linear-to-r from-transparent via-cyan-500 to-transparent opacity-0 blur-sm transition-opacity duration-300 group-hover:opacity-100"></span>
             </motion.button>
         </ScreenWrapper>
-    )
-}
+    );
+};

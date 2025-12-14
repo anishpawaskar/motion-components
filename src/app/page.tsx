@@ -1,6 +1,7 @@
 import { AceternityCard } from '@/components/aceternity-card';
 import { AnimatedBox } from '@/components/animated-box';
 import { AnimatedTextPage } from '@/components/animated-text';
+import { ColorChangingBox } from '@/components/color-changing-box';
 import { Dashboard } from '@/components/dashboard';
 import { HoverButton } from '@/components/hover-button';
 
@@ -12,6 +13,7 @@ export default function Home() {
             <Dashboard />
             <AnimatedTextPage />
             <AnimatedBox />
+            <ColorChangingBox />
         </div>
     );
 }

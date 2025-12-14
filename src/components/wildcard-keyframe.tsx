@@ -4,7 +4,7 @@ import React from 'react';
 import { ScreenWrapper } from './common/screen-wrapper';
 import { motion } from 'motion/react';
 
-export const Wildcard = () => {
+export const WildcardKeyframe = () => {
     return (
         <ScreenWrapper>
             <motion.div

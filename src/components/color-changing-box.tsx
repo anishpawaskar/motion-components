@@ -17,13 +17,17 @@ export const ColorChangingBox = () => {
             <motion.div
                 animate={{
                     backgroundColor: COLORS,
+                    scale: [0.9, 1.1, 1.1, 0.9],
+                    rotate: [0, 360, 360, 0],
+                    borderRadius: ['0%', '50%', '50%', '0%'],
                 }}
                 transition={{
                     duration: 2,
                     ease: 'linear',
                     repeat: Infinity,
+                    times: [0, 0.5, 0.75, 1],
                 }}
-                className="size-40 rounded-md"
+                className="size-40"
             ></motion.div>
         </ScreenWrapper>
     );

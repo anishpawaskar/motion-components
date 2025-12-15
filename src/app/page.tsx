@@ -6,6 +6,7 @@ import { Dashboard } from '@/components/dashboard';
 import { DynamicVariants } from '@/components/dynamic-variants';
 import { GestureAnimations } from '@/components/gesture-animations';
 import { HoverButton } from '@/components/hover-button';
+import { ToggleBtn } from '@/components/toggle-btn';
 import { WildcardKeyframe } from '@/components/wildcard-keyframe';
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
             <WildcardKeyframe />
             <GestureAnimations />
             <DynamicVariants />
+            <ToggleBtn />
         </div>
     );
 }

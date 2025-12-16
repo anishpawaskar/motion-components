@@ -1,5 +1,6 @@
 import { BoxsBackground } from '@/components/(backgrounds)/boxs';
 import { DotsBackground } from '@/components/(backgrounds)/dots';
+import { SkewedLinesBackground } from '@/components/(backgrounds)/skewed-lines';
 import React from 'react';
 
 const Backgrounds = () => {
@@ -7,6 +8,7 @@ const Backgrounds = () => {
         <div className="min-h-screen">
             <DotsBackground />
             <BoxsBackground />
+            <SkewedLinesBackground />
         </div>
     );
 };

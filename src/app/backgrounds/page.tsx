@@ -1,5 +1,6 @@
 import { BoxsBackground } from '@/components/(backgrounds)/boxs';
 import { DotsBackground } from '@/components/(backgrounds)/dots';
+import { InfiniteCircleBackground } from '@/components/(backgrounds)/infinte-circle';
 import { SkewedLinesBackground } from '@/components/(backgrounds)/skewed-lines';
 import React from 'react';
 
@@ -9,6 +10,7 @@ const Backgrounds = () => {
             <DotsBackground />
             <BoxsBackground />
             <SkewedLinesBackground />
+            <InfiniteCircleBackground />
         </div>
     );
 };

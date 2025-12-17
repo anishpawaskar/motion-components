@@ -6,6 +6,7 @@ import { Dashboard } from '@/components/dashboard';
 import { DynamicVariants } from '@/components/dynamic-variants';
 import { GestureAnimations } from '@/components/gesture-animations';
 import { HoverButton } from '@/components/hover-button';
+import { MultiImageInput } from '@/components/multi-image-input';
 import { ToggleBtn } from '@/components/toggle-btn';
 import { WildcardKeyframe } from '@/components/wildcard-keyframe';
 
@@ -22,6 +23,7 @@ export default function Home() {
             <GestureAnimations />
             <DynamicVariants />
             <ToggleBtn />
+            <MultiImageInput />
         </div>
     );
 }

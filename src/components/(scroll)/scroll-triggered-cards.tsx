@@ -1,7 +1,8 @@
 'use client';
 
-import { motion, useScroll, Variants } from 'motion/react';
-import { useRef } from 'react';
+import { RocketIcon } from 'lucide-react';
+import { motion, useMotionValueEvent, useScroll, Variants } from 'motion/react';
+import { useRef, useState } from 'react';
 
 const COLORS: string[] = [
     '#3B82F6', // Blue 500
@@ -70,6 +71,42 @@ export const ScrollTriggeredCards = () => {
                     );
                 })}
             </div>
+            <Rocket containerRef={containerRef} />
+        </motion.div>
+    );
+};
+
+const Rocket = ({ containerRef }) => {
+    const [scrollDirection, setScrollDirection] = useState('down');
+    const { scrollY } = useScroll({
+        container: containerRef,
+    });
+
+    useMotionValueEvent(scrollY, 'change', (current) => {
+        const diff = current - scrollY?.getPrevious();
+        setScrollDirection(diff > 0 ? 'down' : 'up');
+    });
+
+    const rocketVariant = {
+        up: {
+            rotate: 316,
+        },
+        down: {
+            rotate: 136,
+        },
+    };
+
+    console.log('scrollDirection', scrollDirection);
+
+    // down - 137
+    return (
+        <motion.div
+            initial={'down'}
+            animate={scrollDirection === 'down' ? 'down' : 'up'}
+            variants={rocketVariant}
+            className="fixed right-20 bottom-20 flex size-5 items-center justify-center"
+        >
+            <RocketIcon />
         </motion.div>
     );
 };

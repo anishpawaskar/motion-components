@@ -1,7 +1,13 @@
 'use client';
 
 import { RocketIcon } from 'lucide-react';
-import { motion, useMotionValueEvent, useScroll, Variants } from 'motion/react';
+import {
+    motion,
+    useMotionValueEvent,
+    useScroll,
+    useTransform,
+    Variants,
+} from 'motion/react';
 import { useRef, useState } from 'react';
 
 const COLORS: string[] = [
@@ -40,11 +46,17 @@ export const ScrollTriggeredCards = () => {
         container: containerRef,
     });
 
+    const backgroundColor = useTransform(
+        scrollYProgress,
+        [0, 0.5, 1],
+        ['#F87171', '#FACC15', '#4ADE80']
+    );
+
     return (
         <motion.div ref={containerRef} className="h-screen overflow-y-auto p-5">
             <motion.div
                 className="fixed inset-x-0 top-0 z-20 h-1 origin-left bg-neutral-700"
-                style={{ scaleX: scrollYProgress }}
+                style={{ scaleX: scrollYProgress, backgroundColor }}
             />
             <div className="flex flex-col items-center gap-20">
                 {COLORS.map((color) => {

@@ -5,11 +5,11 @@ import React, { useRef } from 'react';
 
 export const StickyProgressCard = () => {
     return (
-        <>
+        <div className="h-full bg-neutral-900">
             {Array.from({ length: 8 }, (_, idx) => idx + 1).map((item) => {
                 return <ProgressCard key={item} />;
             })}
-        </>
+        </div>
     );
 };
 
@@ -29,7 +29,7 @@ const ProgressCard = () => {
                         style={{
                             scale: scrollYProgress,
                         }}
-                        className="sticky top-0 size-20 rounded-full bg-yellow-400"
+                        className="sticky top-0 size-20 rounded-full bg-pink-500"
                     />
                 </div>
                 <div className="h-[400px] w-xs rounded-md border-2 border-dotted border-pink-500"></div>

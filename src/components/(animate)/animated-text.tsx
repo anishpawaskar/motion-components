@@ -49,6 +49,7 @@ export const AnimatedText = () => {
                     transition={{
                         duration: 0.5,
                         ease: 'easeInOut',
+                        delay: 0.2,
                     }}
                     className={cn(
                         'mx-auto w-full max-w-2xl text-center text-5xl font-bold tracking-tighter',
